@@ -1,9 +1,6 @@
 package br.com.fiap.EcoWatt.beans;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ECOWATT_ENDERECO")
@@ -64,8 +61,8 @@ public class Endereco {
     public void setCep(String cep) {
         this.cep = cep;
     }
-
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_ENDERECO")
     int idEndereco;
     @Column(name = "RUA_ENDERECO")

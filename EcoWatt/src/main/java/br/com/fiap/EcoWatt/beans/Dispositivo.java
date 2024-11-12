@@ -1,15 +1,12 @@
 package br.com.fiap.EcoWatt.beans;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ECOWATT_DISPOSITIVO")
 public class Dispositivo {
-
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_DISPOSITIVO")
     int idDispositivo;
     @Column(name = "ID_USUARIO")

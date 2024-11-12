@@ -1,9 +1,9 @@
 package br.com.fiap.EcoWatt.beans;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "ECOWATT_USUARIO")
@@ -40,13 +40,22 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
     @Id
+    @NotNull
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_USUARIO")
     int idUsuario;
+
+    @Size(min = 3, max = 50)
     @Column(name = "NOME_USUARIO")
     String nome;
+
+    @Email
     @Column(name = "EMAIL_USUARIO")
     String email;
+
+    @Size(min = 5, max = 50)
     @Column(name = "SENHA_USUARIO")
     String senha;
 }
