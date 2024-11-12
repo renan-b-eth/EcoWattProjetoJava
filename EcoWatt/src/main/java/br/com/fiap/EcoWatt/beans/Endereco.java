@@ -2,6 +2,7 @@ package br.com.fiap.EcoWatt.beans;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
@@ -64,6 +65,7 @@ public class Endereco {
         this.cep = cep;
     }
 
+    @Id
     @Column(name = "ID_ENDERECO")
     int idEndereco;
     @Column(name = "RUA_ENDERECO")

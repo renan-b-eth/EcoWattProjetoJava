@@ -2,11 +2,13 @@ package br.com.fiap.EcoWatt.beans;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "ECOWATT_HISTORICO_MENSAL")
 public class Historico {
+    @Id
     @Column(name = "ID_HISTORICO")
     int idHistorico;
     @Column(name = "ID_DISPOSITIVO")

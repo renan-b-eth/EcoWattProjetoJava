@@ -2,6 +2,7 @@ package br.com.fiap.EcoWatt.beans;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
@@ -39,7 +40,7 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
+    @Id
     @Column(name = "ID_USUARIO")
     int idUsuario;
     @Column(name = "NOME_USUARIO")

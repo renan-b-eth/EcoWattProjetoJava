@@ -5,4 +5,4 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17.0.1-jdk-slim
 COPY --from=build /target/EcoWatt-0.0.1-SNAPSHOT.jar EcoWatt.jar
 EXPOSE 8080
-ENTRYPOINT [ "java", -"java", "EcoWatt.jar"]
+ENTRYPOINT [ "java", "-java", "EcoWatt.jar"]

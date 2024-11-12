@@ -2,6 +2,7 @@ package br.com.fiap.EcoWatt.beans;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.util.Date;
@@ -9,6 +10,7 @@ import java.util.Date;
 @Entity
 @Table(name = "ECOWATT_LEITURA_CONSUMO")
 public class Leitura {
+    @Id
     @Column(name = "ID_LEITURA")
     int idLeitura;
     @Column(name = "CORRENTE_LEITURA")
