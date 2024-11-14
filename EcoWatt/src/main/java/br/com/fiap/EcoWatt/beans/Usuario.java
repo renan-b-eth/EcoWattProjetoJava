@@ -44,7 +44,6 @@ public class Usuario {
     @Id
     @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_USUARIO")
     int idUsuario;
 
     @Size(min = 3, max = 50)
