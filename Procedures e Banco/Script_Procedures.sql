@@ -126,6 +126,8 @@ EXCEPTION
 END;
 /
 
+
+
 -- Procedure para exportar os dados no formato JSON
 CREATE OR REPLACE PROCEDURE Exportar_Dados_JSON AS 
    v_json CLOB;
@@ -141,3 +143,29 @@ BEGIN
    DBMS_OUTPUT.PUT_LINE(v_json);
 END;
 /
+
+-- consultar usuario
+
+CREATE OR REPLACE PROCEDURE Consultar_Usuario (
+    p_id_usuario IN NUMBER,
+    p_nome_usuario OUT VARCHAR2,
+    p_email_usuario OUT VARCHAR2
+) AS
+BEGIN
+    SELECT 
+        NOME_USUARIO,
+        EMAIL_USUARIO
+    INTO
+        p_nome_usuario,
+        p_email_usuario
+    FROM
+        ECOWATT_USUARIO
+    WHERE
+        ID_USUARIO = p_id_usuario;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('Usuário não encontrado.');
+END;
+
+
+EXECUTE Consultar_Usuario(1, :p_nome_usuario, :p_email_usuario);

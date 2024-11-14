@@ -4,10 +4,7 @@ import br.com.fiap.EcoWatt.beans.Usuario;
 import br.com.fiap.EcoWatt.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -20,4 +17,9 @@ public class UsuarioController {
         usuarioService.inserirUsuario(usuario.getNome(), usuario.getEmail(), usuario.getSenha());
         return ResponseEntity.ok("Usuário criado com sucesso");
     }
+    @GetMapping("/{id}")
+    public Usuario buscarUsuario(@PathVariable Long id) {
+        return usuarioService.consultarUsuario(id);
+    }
+
 }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @Service
 public class UsuarioService {
     @Autowired
@@ -22,4 +24,18 @@ public class UsuarioService {
     public Usuario salvar(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
+
+    public Usuario consultarUsuario(Long idUsuario) {
+        Map<String, Usuario> resultMap = usuarioRepository.executarConsultaUsuario(idUsuario);
+        String nomeUsuario = String.valueOf(resultMap.get("nome_usuario"));
+        String emailUsuario = String.valueOf(resultMap.get("email_usuario"));
+
+        Usuario usuario = new Usuario();
+        usuario.setNome(nomeUsuario);
+        usuario.setEmail(emailUsuario);
+
+        return usuario;
+    }
+
+
 }
