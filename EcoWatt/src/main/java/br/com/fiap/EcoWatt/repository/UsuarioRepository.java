@@ -13,9 +13,8 @@ import java.util.Optional;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
-    @Query(nativeQuery = true, value = "BEGIN Consultar_Usuario(:id_usuario, :nome_usuario, :email_usuario); END;")
-    @Modifying
-    Map<String, Usuario> executarConsultaUsuario(@Param("id_usuario") Long idUsuario);
+    @Query(nativeQuery = true, value = "SELECT * FROM ECOWATT_USUARIO WHERE ID_USUARIO = :id_usuario")
+    Usuario executarConsultaUsuario(@Param("id_usuario") Long idUsuario);
 
     /*Usuario consultarUsuario(@Param("id_usuario") Long idUsuario);*/
 }

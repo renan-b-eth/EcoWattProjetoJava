@@ -26,15 +26,9 @@ public class UsuarioService {
     }
 
     public Usuario consultarUsuario(Long idUsuario) {
-        Map<String, Usuario> resultMap = usuarioRepository.executarConsultaUsuario(idUsuario);
-        String nomeUsuario = String.valueOf(resultMap.get("nome_usuario"));
-        String emailUsuario = String.valueOf(resultMap.get("email_usuario"));
+        Usuario resultMap = usuarioRepository.executarConsultaUsuario(idUsuario);
 
-        Usuario usuario = new Usuario();
-        usuario.setNome(nomeUsuario);
-        usuario.setEmail(emailUsuario);
-
-        return usuario;
+        return resultMap;
     }
 
 
