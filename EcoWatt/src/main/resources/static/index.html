@@ -50,11 +50,17 @@
         <h2>Histórico de Consumo</h2>
         <p>Acesse os dados de consumo dos meses anteriores:</p>
         <ul id="historicoLista">
-            <li>Mês 1: <span class="historicoConsumo">0 kWh</span></li>
-            <li>Mês 2: <span class="historicoConsumo">0 kWh</span></li>
-            <li>Mês 3: <span class="historicoConsumo">0 kWh</span></li>
+            <li data-mes="1">Mês 1: <span class="historicoConsumo">0 kWh</span></li>
+            <li data-mes="2">Mês 2: <span class="historicoConsumo">0 kWh</span></li>
+            <li data-mes="3">Mês 3: <span class="historicoConsumo">0 kWh</span></li>
         </ul>
+
     </section>
+
+    <form id="meuFormulario">
+        <label for="consumo">Consumo Total:</label>
+        <input type="number" id="consumo" disabled>
+        <button onclick="buscarConsumo(123)">Buscar</button> </form>
 
     <section id="contato">
         <h2>Contato</h2>

@@ -74,3 +74,28 @@ form.addEventListener('submit', (event) => {
 
   });
 });
+
+function buscarConsumo(id) {
+  fetch(`/historico/${id}/consumo`)
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('consumo').value = data;
+    })
+    .catch(error => {
+      console.error('Erro ao buscar consumo:', error);
+    });
+}
+
+function buscarConsumo2(id) {
+    fetch(`/historico/${id}/consumo`)
+        .then(response => response.json())
+        .then(data => {
+            // Seleciona o elemento span
+            const consumoSpan = document.querySelector('.historicoConsumo');
+            // Atualiza o texto do span com o valor do consumo
+            consumoSpan.textContent = `${data} kWh`;
+        })
+        .catch(error => {
+            console.error('Erro ao buscar consumo:', error);
+        });
+}

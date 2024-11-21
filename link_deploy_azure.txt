@@ -1,0 +1,5 @@
+Para acessar nosso link deploy azure acesse:
+
+https://ecowatt-ecowatt-app.azuremicroservices.io
+
+No caso não é necessário logar com usuarios e nem auth, apenas ter o banco de dados rodado para a realização dos endpoints
